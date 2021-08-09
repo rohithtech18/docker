@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} ccsapp.jar
-ENTRYPOINT ["java","-jar","/ccsapp.jar"]
+
+FROM openjdk:14
+ADD target/currency-conversion-service.jar currency-conversion-service.jar
+EXPOSE 8100
+ENTRYPOINT ["java","-jar","currency-conversion-service.jar"]

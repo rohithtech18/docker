@@ -20,6 +20,11 @@ public class CurrencyConversionController {
 	
 	@Autowired
 	private CurrencyExchangeServiceProxy proxy;
+	
+	@GetMapping("/getMessage")
+	public String getMessage() {
+		return "Hello World!";
+	}
 
 	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
 	public CurrencyConversionBean convertCurrency(@PathVariable String from, @PathVariable String to,

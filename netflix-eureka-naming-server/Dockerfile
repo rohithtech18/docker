@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} eurekaapp.jar
-ENTRYPOINT ["java","-jar","/eurekaapp.jar"]
+
+FROM openjdk:14
+ADD target/netflix-eureka-naming-server.jar netflix-eureka-naming-server.jar
+EXPOSE 8761
+ENTRYPOINT ["java","-jar","netflix-eureka-naming-server.jar"]
